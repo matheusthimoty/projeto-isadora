@@ -1,0 +1,168 @@
+/* src/pages/Home.css - Estilos completos para a Home Page */
+
+/* ---------------------------------------------------
+ * LAYOUT PRINCIPAL (TEXTO + FOTO)
+ * --------------------------------------------------- */
+
+.home-container {
+  /* Centraliza o conteúdo na tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Garante que ocupe a maior parte da altura da tela */
+  min-height: calc(100vh - 70px);
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  /* Configura o layout de duas colunas */
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Espaço entre texto e imagem */
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ---------------------------------------------------
+ * COLUNA DE TEXTO
+ * --------------------------------------------------- */
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.hero-name {
+  font-size: 52px; /* Tamanho maior para impacto */
+  font-weight: 800; /* Extra bold */
+  color: #1a5276; /* Azul escuro e sofisticado */
+  margin-bottom: 5px;
+  letter-spacing: -0.8px;
+}
+
+.hero-profession {
+  font-size: 26px;
+  color: #3498db; /* Azul de destaque */
+  margin-bottom: 35px;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ---------------------------------------------------
+ * BOTÕES DE AÇÃO
+ * --------------------------------------------------- */
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start; /* Alinha os botões à esquerda do texto */
+  gap: 20px;
+}
+
+/* Estilo base do Link (agora se comporta como botão) */
+.btn {
+  padding: 14px 35px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none; /* Remove sublinhado dos links */
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #3498db; /* Azul principal */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9; /* Azul escuro no hover */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #3498db;
+  border: 2px solid #3498db;
+}
+
+.btn-secondary:hover {
+  background-color: #e6f0f8; /* Fundo azul bem claro no hover */
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------
+ * COLUNA DA IMAGEM
+ * --------------------------------------------------- */
+
+.hero-image-container {
+  flex: 1;
+  max-width: 500px; /* Limite o tamanho da imagem em desktop */
+  display: flex;
+  justify-content: flex-end; /* Alinha a imagem à direita */
+}
+
+.isadora-profile-pic {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px; /* Borda levemente arredondada para um visual moderno */
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra mais profunda e profissional */
+}
+
+/* ---------------------------------------------------
+ * RESPONSIVIDADE (MOBILE E TABLET)
+ * --------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column; /* Coloca os itens em pilha vertical */
+    gap: 40px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center; /* Centraliza o texto no mobile */
+    order: 2; /* Coloca o texto abaixo da foto */
+  }
+
+  .hero-image-container {
+    max-width: 70%; /* Imagem menor no mobile */
+    order: 1; /* Coloca a imagem no topo */
+    justify-content: center;
+  }
+
+  .hero-name {
+    font-size: 40px;
+  }
+
+  .hero-profession {
+    font-size: 20px;
+  }
+
+  .hero-buttons {
+    justify-content: center; /* Centraliza botões no mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-buttons {
+    flex-direction: column; /* Coloca botões em pilha para telas muito pequenas */
+    gap: 15px;
+  }
+  .btn {
+    width: 100%;
+  }
+}

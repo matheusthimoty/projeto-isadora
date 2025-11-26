@@ -1,0 +1,155 @@
+/* src/pages/Sobre.css */
+
+/* ---------------------------------------------------
+ * VARIÁVEIS E GERAL
+ * --------------------------------------------------- */
+
+:root {
+  --primary-blue: #3498db;
+  --dark-blue: #1a5276;
+  --text-dark: #333;
+  --text-medium: #666;
+  --background-light: #f9f9f9;
+}
+
+.sobre-container {
+  /* Centraliza o conteúdo e adiciona espaço interno */
+  max-width: 900px;
+  margin: 50px auto 80px auto;
+  padding: 0 20px;
+}
+
+.sobre-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sobre-subtitle {
+  font-size: 18px;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 20px;
+}
+
+.section-block {
+  margin-bottom: 50px; /* Espaçamento entre as seções (Formação, Experiências, etc.) */
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 24px;
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* ---------------------------------------------------
+ * FORMAÇÃO ACADÊMICA
+ * --------------------------------------------------- */
+
+.section-formacao {
+  border-left: 5px solid var(--primary-blue); /* Destaque lateral azul */
+}
+
+.formacao-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.bullet-point {
+  font-size: 1.2em;
+  color: var(--primary-blue);
+  margin-right: 15px;
+  line-height: 1.5;
+}
+
+.formacao-description {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+
+.degree {
+  font-weight: bold;
+  display: block;
+  color: #444;
+}
+
+.institution {
+  font-style: italic;
+  color: #777;
+}
+
+/* ---------------------------------------------------
+ * EXPERIÊNCIAS PROFISSIONAIS
+ * --------------------------------------------------- */
+
+.section-experiencia {
+  border-left: 5px solid var(--dark-blue); /* Destaque lateral azul escuro */
+}
+
+.experiencia-item {
+  margin-bottom: 30px;
+}
+
+.experiencia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+.company {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.job-description-list {
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.job-description-list li {
+  margin-bottom: 5px;
+}
+
+/* ---------------------------------------------------
+ * RESPONSIVIDADE
+ * --------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .sobre-title {
+    font-size: 32px;
+  }
+  .sobre-container {
+    margin-top: 30px;
+  }
+  .experiencia-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .company {
+    margin-top: 5px;
+  }
+}
