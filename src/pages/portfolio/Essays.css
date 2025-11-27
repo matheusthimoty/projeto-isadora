@@ -1,0 +1,42 @@
+/* --- Estilos da Página Principal (Essays.jsx) --- */
+
+.page-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: #1a202c; /* Cor escura para o título principal */
+  font-weight: 700;
+  margin-bottom: 5px;
+  border-bottom: 3px solid #3b82f6; /* Linha azul para destaque */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+/* --- GRID PARA OS CARDS --- */
+.essays-grid {
+  display: grid;
+  /* Layout responsivo: 1 coluna no mobile, 2 no tablet/desktop, 3 em telas grandes */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  .page-subtitle {
+    font-size: 1rem;
+  }
+}

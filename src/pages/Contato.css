@@ -1,0 +1,208 @@
+/* ---------------------------------------------------
+ * ANIMAÇÕES
+ * --------------------------------------------------- */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------
+ * VARIÁVEIS E GERAL
+ * --------------------------------------------------- */
+
+:root {
+  --primary-blue: #3498db;
+  --dark-blue: #1a5276;
+  --text-dark: #333;
+  --text-medium: #666;
+  --background-light: #f9f9f9;
+  --form-bg: #fff;
+  --border-color: #ddd;
+}
+
+.contato-container {
+  max-width: 700px;
+  margin: 50px auto 80px auto;
+  padding: 0 20px;
+}
+
+/* Título e Subtítulo com animação */
+.page-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  text-align: center;
+  margin-bottom: 10px;
+  animation: slideUp 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.page-subtitle {
+  font-size: 18px;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 20px;
+  animation: slideUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+/* ---------------------------------------------------
+ * CONTÊINER E FORMULÁRIO
+ * --------------------------------------------------- */
+
+.contact-form-container {
+  background-color: var(--form-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--primary-blue);
+  animation: slideUp 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark-blue);
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* Garante que padding não estoure a largura */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ---------------------------------------------------
+ * BOTÃO DE ENVIO
+ * --------------------------------------------------- */
+
+.btn-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background-color: var(--primary-blue);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #2980b9; /* Azul um pouco mais escuro */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-submit:disabled {
+  background-color: #95a5a6; /* Cinza claro para desabilitado */
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-icon {
+  font-size: 1.1em;
+}
+
+/* ---------------------------------------------------
+ * MENSAGENS DE STATUS E E-MAIL DIRETO
+ * --------------------------------------------------- */
+
+.status-success,
+.status-error {
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.status-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.email-direto-info {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-medium);
+}
+
+.email-link {
+  color: var(--primary-blue);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------
+ * RESPONSIVIDADE
+ * --------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .contato-container {
+    margin-top: 30px;
+  }
+  .page-title {
+    font-size: 32px;
+  }
+  .contact-form-container {
+    padding: 25px;
+  }
+}

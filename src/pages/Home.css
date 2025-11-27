@@ -1,4 +1,17 @@
-/* src/pages/Home.css - Estilos completos para a Home Page */
+/* ---------------------------------------------------
+ * ANIMAÇÕES
+ * --------------------------------------------------- */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ---------------------------------------------------
  * LAYOUT PRINCIPAL (TEXTO + FOTO)
@@ -31,20 +44,24 @@
 .hero-text {
   flex: 1;
   max-width: 50%;
-  text-align: left; /* Alinha o texto à esquerda */
+  text-align: left;
+
+  /* Aplica a animação de entrada com delay */
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
 }
 
 .hero-name {
-  font-size: 52px; /* Tamanho maior para impacto */
-  font-weight: 800; /* Extra bold */
-  color: #1a5276; /* Azul escuro e sofisticado */
+  font-size: 52px;
+  font-weight: 800;
+  color: #1a5276;
   margin-bottom: 5px;
   letter-spacing: -0.8px;
 }
 
 .hero-profession {
   font-size: 26px;
-  color: #3498db; /* Azul de destaque */
+  color: #3498db;
   margin-bottom: 35px;
   font-weight: 600;
 }
@@ -62,7 +79,7 @@
 
 .hero-buttons {
   display: flex;
-  justify-content: flex-start; /* Alinha os botões à esquerda do texto */
+  justify-content: flex-start;
   gap: 20px;
 }
 
@@ -75,19 +92,19 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none; /* Remove sublinhado dos links */
+  text-decoration: none;
   display: inline-block;
   text-align: center;
 }
 
 .btn-primary {
-  background-color: #3498db; /* Azul principal */
+  background-color: #3498db;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #2980b9; /* Azul escuro no hover */
-  transform: translateY(-2px); /* Efeito de elevação */
+  background-color: #2980b9;
+  transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
 
@@ -98,7 +115,7 @@
 }
 
 .btn-secondary:hover {
-  background-color: #e6f0f8; /* Fundo azul bem claro no hover */
+  background-color: #e6f0f8;
   transform: translateY(-2px);
 }
 
@@ -108,18 +125,32 @@
 
 .hero-image-container {
   flex: 1;
-  max-width: 500px; /* Limite o tamanho da imagem em desktop */
+  max-width: 500px;
   display: flex;
-  justify-content: flex-end; /* Alinha a imagem à direita */
+  justify-content: flex-end;
+
+  /* Aplica a animação de entrada com delay */
+  animation: slideUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
 }
 
 .isadora-profile-pic {
   width: 100%;
   max-width: 450px;
   height: auto;
-  border-radius: 12px; /* Borda levemente arredondada para um visual moderno */
+
+  /* Destaque visual: Borda circular e anel azul */
+  border-radius: 50%; /* Faz a foto circular */
+  border: 8px solid #ffffff; /* Borda branca para separar */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 4px #3498db; /* Sombra e anel azul */
+
   object-fit: cover;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra mais profunda e profissional */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.isadora-profile-pic:hover {
+  transform: scale(1.02); /* Leve zoom no hover */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3), 0 0 0 6px #3498db; /* Aumenta a sombra e o anel */
 }
 
 /* ---------------------------------------------------
@@ -128,19 +159,19 @@
 
 @media (max-width: 992px) {
   .hero-content {
-    flex-direction: column; /* Coloca os itens em pilha vertical */
+    flex-direction: column;
     gap: 40px;
   }
 
   .hero-text {
     max-width: 100%;
-    text-align: center; /* Centraliza o texto no mobile */
-    order: 2; /* Coloca o texto abaixo da foto */
+    text-align: center;
+    order: 2;
   }
 
   .hero-image-container {
-    max-width: 70%; /* Imagem menor no mobile */
-    order: 1; /* Coloca a imagem no topo */
+    max-width: 70%;
+    order: 1;
     justify-content: center;
   }
 
@@ -153,13 +184,13 @@
   }
 
   .hero-buttons {
-    justify-content: center; /* Centraliza botões no mobile */
+    justify-content: center;
   }
 }
 
 @media (max-width: 600px) {
   .hero-buttons {
-    flex-direction: column; /* Coloca botões em pilha para telas muito pequenas */
+    flex-direction: column;
     gap: 15px;
   }
   .btn {

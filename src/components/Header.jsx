@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
@@ -19,13 +18,18 @@ const Header = () => {
       <div className="header-left">
         <h1 className="header-title">
           <Link to="/" className="header-link">
-            Isadora Leocardio
+            IL
           </Link>
         </h1>
       </div>
 
       {/* 2. Navegação Principal (Centro) */}
       <nav className="header-nav-center">
+        {/* NOVO LINK: INÍCIO */}
+        <Link to="/" className="nav-link">
+          Início
+        </Link>
+        {/* LINKS EXISTENTES */}
         <Link to="/sobre" className="nav-link">
           Sobre Mim
         </Link>
@@ -44,7 +48,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon"
-          aria-label="LinkedIn" // Boa prática de acessibilidade
+          aria-label="LinkedIn"
         >
           {/* 💡 ÍCONE DO LINKEDIN */}
           <FaLinkedinIn />
