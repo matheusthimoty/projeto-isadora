@@ -7,7 +7,7 @@ import IsadoraFoto from '../assets/isadora-profile.webp'
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div id="home" className="home-container">
       {/* Mudei de <section> para <div> para facilitar o layout flex */}
       <div className="hero-content">
         {/* COLUNA 1: TEXTO */}

@@ -1,0 +1,93 @@
+/* Variáveis para consistência */
+:root {
+  --text-light: #fff;
+  --text-subtle: #bbb;
+  --bg-dark: #111;
+  --bg-hover: #1a1a1a;
+  --border-dark: #222;
+}
+
+.fotojornalismo-container {
+  max-width: 1100px;
+  margin: 30px auto; /* Reduzindo margem superior/inferior */
+  padding: 15px; /* Reduzindo padding */
+}
+
+/* Títulos Menores e Responsivos */
+.page-title {
+  font-size: 2rem; /* REDUZIDO de 2.4rem */
+  margin-bottom: 5px; /* Menos espaçamento */
+  color: var(--text-light);
+}
+
+.page-subtitle {
+  color: #aaa;
+  font-size: 1rem; /* Tamanho normal para subtítulos */
+  margin-bottom: 25px; /* Menos espaçamento */
+}
+
+/* Grid Mantido, já está responsivo com auto-fit */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; /* Levemente reduzido */
+}
+
+.album-card {
+  display: block;
+  background: var(--bg-dark);
+  border-radius: 10px; /* Borda levemente menor */
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-light);
+  border: 1px solid var(--border-dark);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adicionando sombra sutil */
+}
+
+.album-card:hover {
+  transform: translateY(-4px); /* Efeito mais sutil que scale(1.02) */
+  background: var(--bg-hover);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.album-thumb img {
+  width: 100%;
+  height: 160px; /* REDUZIDO de 180px */
+  object-fit: cover;
+}
+
+.album-info {
+  padding: 12px; /* Reduzindo padding interno */
+}
+
+.album-info h2 {
+  font-size: 1.2rem; /* REDUZIDO de 1.3rem */
+  margin-bottom: 4px;
+}
+
+.album-info p {
+  color: var(--text-subtle);
+  font-size: 0.9rem; /* Mantendo sutil */
+  margin-bottom: 8px;
+}
+
+.album-link {
+  font-size: 0.85rem; /* Levemente menor */
+  opacity: 0.7;
+}
+
+/* Responsividade Mobile (Ajustes finos para telas pequenas) */
+@media (max-width: 600px) {
+  .fotojornalismo-container {
+    padding: 15px 10px;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .album-thumb img {
+    height: 140px; /* Menor altura para mobile */
+  }
+}

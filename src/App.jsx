@@ -5,13 +5,16 @@ import Sobre from './pages/Sobre'
 import Contato from './pages/Contato'
 
 // IMPORTAÇÕES DOS COMPONENTES
-// Portfolio Index está na raiz de 'pages' (Portfolio.jsx)
 import Portfolio from './pages/Portfolio'
 
-// Sub-portfólios estão dentro da pasta 'portfolio' (com letra minúscula)
+// Sub-portfólios
 import Essays from './pages/portfolio/Essays'
 import Fotojornalismo from './pages/portfolio/Fotojornalismo'
 import Audiovisuais from './pages/portfolio/AudioVisuais'
+
+// Álbuns e Galeria
+import Albums from './pages/portfolio/Albums'
+import Gallery from './pages/portfolio/Gallery'
 
 function App() {
   return (
@@ -33,6 +36,12 @@ function App() {
             element={<Fotojornalismo />}
           />
           <Route path="/portfolio/audiovisuais" element={<Audiovisuais />} />
+
+          {/* ÁLBUNS DE FOTOJORNALISMO */}
+          <Route path="/portfolio/fotojornalismo/albuns" element={<Albums />} />
+
+          {/* GALERIA DO ÁLBUM NBB */}
+          <Route path="/portfolio/fotojornalismo/nbb" element={<Gallery />} />
         </Routes>
       </main>
     </>
